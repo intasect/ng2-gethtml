@@ -1,6 +1,6 @@
-import { NgModule, ModuleWithProviders } from "@angular/core";
-import { Ng2GetHTML } from "./src/ng2-gethtml";
-import { Ng2Script } from "./src/ng2-script";
+import { NgModule, ModuleWithProviders } from '@angular/core';
+import { Ng2GetHTML } from './src/ng2-gethtml';
+import { Ng2Script } from './src/ng2-script';
 
 @NgModule({
     declarations: [
