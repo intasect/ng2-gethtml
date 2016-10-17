@@ -18,7 +18,7 @@ export class Ng2GetHTML implements AfterContentInit{
     }
 
     ngAfterContentInit() {
-        let result = Promise.resolve();
+        let result: Promise<boolean> = Promise.resolve(true);
         this.childrens.forEach((children: Ng2Script) => {
             result = result.then(() => {
                 return children.load();

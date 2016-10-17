@@ -12,8 +12,8 @@ export class Ng2Script {
     constructor(public element: ElementRef) {
     }
 
-    public load() {
-        return new Promise(resolve => {
+    public load(): Promise<boolean> {
+        return new Promise<boolean>(resolve => {
             let contentSource = this.element.nativeElement.innerText;
             this.element.nativeElement.innerText = '';
             if (this.src !== undefined && contentSource === '') {
