@@ -1,6 +1,6 @@
 {
   "name": "ng2-gethtml",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "angular2 module for get remote html template with javascript",
   "main": "ng2-gethtml",
   "scripts": {
