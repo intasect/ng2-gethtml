@@ -7,7 +7,10 @@ import { Ng2Script } from "./src/ng2-script";
         Ng2GetHTML,
         Ng2Script
     ],
-    exports: []
+    exports: [
+        Ng2GetHTML,
+        Ng2Script
+    ]
 })
 export class Ng2GetHTMLModule {
     static forRoot(): ModuleWithProviders {
