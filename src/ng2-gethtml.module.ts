@@ -1,6 +1,9 @@
 import { NgModule, ModuleWithProviders } from '@angular/core';
-import { Ng2GetHTML } from './src/ng2-gethtml';
-import { Ng2Script } from './src/ng2-script';
+import { Ng2GetHTML } from './ng2-gethtml';
+import { Ng2Script } from './ng2-script';
+
+export * from './ng2-gethtml';
+export * from './ng2-script';
 
 @NgModule({
     declarations: [
@@ -15,7 +18,8 @@ import { Ng2Script } from './src/ng2-script';
 export class Ng2GetHTMLModule {
     static forRoot(): ModuleWithProviders {
         return {
-            ngModule: Ng2GetHTMLModule
+            ngModule: Ng2GetHTMLModule,
+            providers: []
         };
     }
 }

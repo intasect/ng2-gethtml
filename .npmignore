@@ -7,11 +7,13 @@ manifest.mf
 build.xml
 node_modules/*
 npm-debug.log
-!config/*
+*.ts
+!*.d.ts
+tests
+examples
+.github
 coverage
-*.js
-*.d.ts
-*.js.map
+!*.metadata.json
 
 #################
 ## JetBrains

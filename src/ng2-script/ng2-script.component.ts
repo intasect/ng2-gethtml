@@ -1,5 +1,6 @@
-import { Component, AfterContentInit, Input, ElementRef } from '@angular/core';
+import { Component, Injectable, AfterContentInit, Input, ElementRef, Renderer } from '@angular/core';
 
+@Injectable()
 @Component({
     selector: 'ng2-script',
     providers: [
@@ -9,24 +10,23 @@ import { Component, AfterContentInit, Input, ElementRef } from '@angular/core';
 export class Ng2Script {
     @Input('src') src: string;
 
-    constructor(public element: ElementRef) {
+    constructor(private element: ElementRef, private renderer: Renderer) {
     }
 
     public load(): Promise<boolean> {
         return new Promise<boolean>((resolve, reject) => {
             if (this.element.nativeElement.childNodes[0]) {
+                this.renderer.createText
                 let contentSource = this.element.nativeElement.childNodes[0].innerText;
                 this.element.nativeElement.innerText = '';
                 if (this.src !== undefined && contentSource === '') {
-                    let scriptNode = document.createElement('script');
+                    let scriptNode = this.renderer.createElement(this.element.nativeElement, 'script');
                     scriptNode.setAttribute('type', 'text/javascript');
                     scriptNode.setAttribute('src', this.src);
                     scriptNode.onload = function () {
                         scriptNode.onload = null;
                         resolve(true);
                     };
-                    this.element.nativeElement.append(scriptNode);
-
                 } else {
                     eval(contentSource);
                     resolve(true);
